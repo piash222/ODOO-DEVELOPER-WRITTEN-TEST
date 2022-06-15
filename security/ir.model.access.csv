@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_emergency_contact,access.emergency.contact,model_emergency_contact,,1,1,1,1
+access_multiple_education,access.multiple.education,model_multiple_education,,1,1,1,1

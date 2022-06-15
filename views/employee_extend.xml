@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="employee_form_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='personal_information']/group" position="after">
+                    <group>
+                        <group name="emergency_contact_ids" colspan="4" string="emergency Contacts">
+                            <field name="emergency_contact_ids">
+                                <tree editable="bottom">
+                                    <field name="seq" widget="handle"/>
+                                    <field name="name" required="1"/>
+                                    <field name="phone" required="1"/>
+                                    <field name="address" required="1"/>
+                                    <field name="applicant_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group name="multiple_education_ids" colspan="4" string="Education">
+                            <field name="multiple_education_ids">
+                                <tree editable="bottom">
+                                    <field name="seq" widget="handle"/>
+                                    <field name="institute" required="1"/>
+                                    <field name="degree" required="1"/>
+                                    <field name="passing_year" required="1"/>
+                                    <field name="applicant_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </group>
+
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
